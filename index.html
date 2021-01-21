@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Med.net</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="main-wrapper">
+
+<header class="top-header">
+    <a href="#" class="logo-png">
+        <img src="img/main-logo-removebg-preview.png" alt="logo" class="logo-png">
+    </a>
+    <button id="addBt" class="header-button btn btn-success dn w-click2">Add&nbsp;card&nbsp;+</button>
+    <button id="login" class="header-button btn btn-primary click-prevent-log">Login</button>
+</header>
+
+<form class="form-password dn click-prevent-log" onsubmit="return false;" novalidate>
+    <span class="email-label click-prevent-log">Enter your e-mail:</span> <br>
+    <input type="email" class="email-input form-control click-prevent-log" required>
+    <span class="password-label click-prevent-log">Enter your password:</span> <br>
+    <input type="password" class="password-input form-control click-prevent-log" required>
+    <button id="confirm" class="header-button btn btn-success click-prevent-log">Confirm</button>
+    <button id="close-pass" class="header-button btn btn-danger click-prevent-log">Close</button>
+</form>
+
+<form class="create-card dn w-click2" name="create-cards" onsubmit="return false;" novalidate>
+    <select  class="choose-doctor form-control">
+        <option>Cardiologist</option>
+        <option>Dentist</option>
+        <option>Therapist</option>
+    </select>
+
+    <div class="selected-cardiologist w-click2">
+        <input type="text" required placeholder="Personal name" class="cardiologist-name form-control form-card">
+        <input type="text" required placeholder="Age" class="cardiologist-age form-control form-card">
+        <input type="text" required placeholder="Visit target" class="cardiologist-target form-control form-card">
+        <input type="text" required placeholder="Visit short info" class="cardiologist-shortinfo form-control form-card">
+        <span style="margin-left: 5px;" class="w-click2">Select urgency:</span>
+        <select class="cardiologist-urgent form-control">
+            <option>Normal</option>
+            <option>High</option>
+            <option>Low</option>
+        </select>
+        <input type="text" required placeholder="Normal pressure" class="cardiologist-normalPreassure form-control form-card">
+        <input type="text" required placeholder="Body weight index" class="cardiologist-bwi form-control form-card">
+        <input type="text" required placeholder="Post cardiac diseases" class="cardiologist-pastDesiases form-control form-card">
+    </div>
+
+    <div class="selected-dantist w-click2 dn">
+        <input type="text" required placeholder="Personal name" class="dantist-name form-control form-card">
+        <input type="text" required placeholder="Age" class="dantist-age form-control form-card">
+        <input type="text" required placeholder="Visit target" class="dantist-target form-control form-card">
+        <input type="text" required placeholder="Visit short info" class="dantist-shortinfo form-control form-card">
+        <span style="margin-left: 5px;" class="w-click2">Select urgency:</span>
+        <select class="dantist-urgent form-control">
+            <option>Normal</option>
+            <option>High</option>
+            <option>Low</option>
+        </select>
+        <span style="margin-left: 5px;" class="w-click2 ">Last visit date:</span>
+        <input type="date" required placeholder="Last visit date" class="dantist-data form-control">
+    </div>
+
+    <div class="selected-therapist w-click2 dn">
+        <input type="text" required placeholder="Personal name" class="therapist-name form-control form-card">
+        <input type="text" required placeholder="Age" class="therapist-age form-control form-card">
+        <input type="text" required placeholder="Visit target" class="therapist-target form-control form-card">
+        <input type="text" required placeholder="Visit short info" class="therapist-shortinfo form-control form-card">
+        <span style="margin-left: 5px;" class="w-click2">Select urgency:</span>
+        <select class="therapist-urgent form-control">
+            <option>Normal</option>
+            <option>High</option>
+            <option>Low</option>
+        </select>
+    </div>
+
+    <p class="p-required dn" id="required">All fields are required.</p>
+    <button type="submit" class="btn btn-success add-card-btn w-click2">Add</button>
+    <button class="btn btn-danger cancel-creation-btn w-click2">Cancel</button>
+
+</form>
+
+<section id="search" class="dn">
+
+    <p class="search-title">
+        <span>Enter&nbsp;phrase:</span>
+    </p>
+
+    <input type="text" class="form-control search-main w-serch">
+
+    <select class="urgent-search form-control w-serch">
+        <option>All</option>
+        <option>Normal</option>
+        <option>High</option>
+        <option>Low</option>
+    </select>
+
+    <select  class="doctor-search form-control w-serch">
+        <option>All</option>
+        <option>Cardiologist</option>
+        <option>Dentist</option>
+        <option>Therapist</option>
+    </select>
+
+    <button class="search-main-btn btn btn-info">Search</button>
+
+</section>
+
+<section id="visit-table" class="dn">
+    <div id="grid-wrapper">
+    </div>
+</section>
+<h3 class="no-items">No items have been added.</h3>
+
+<form class="create-card cloned dn" name="create-cards" onsubmit="return false;" novalidate>
+
+    <div class="edit-form">
+        <input type="text" required placeholder="Personal name" class="name-edit form-control form-card">
+        <input type="text" required placeholder="Age" class="age-edit form-control form-card">
+        <input type="text" required placeholder="Visit target" class="target-edit form-control form-card">
+        <input type="text" required placeholder="Visit short info" class="info-edit form-control form-card">
+        <span style="margin-left: 5px;" class="w-click1">Select urgency:</span>
+        <select class="urgent-edit form-control">
+            <option>Normal</option>
+            <option>High</option>
+            <option>Low</option>
+        </select>
+        <input type="text" required placeholder="Normal pressure" class="pressure-edit form-control form-card">
+        <input type="text" required placeholder="Body weight index" class="bwi-edit form-control form-card">
+        <input type="text" required placeholder="Post cardiac diseases" class="diss-edit form-control form-card">
+        <span style="margin-left: 5px;" class="w-click2">Last visit date:</span>
+        <input type="date" required placeholder="Last visit date" class="date-edit form-control">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary done-card-btn">Done</button>
+    <button class="btn btn-danger cancel-editing-btn">Cancel</button>
+
+</form>
+
+<script type="module" src="js/masonry.js"></script>
+<script type="module" src="js/jquery.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<script type="module" src="js/classes.js"></script>
+<script type="module" src="js/pass.js"></script>
+<script type="module" src="js/script.js"></script>
+
+
+</body>
+</html>
